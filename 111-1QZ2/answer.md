@@ -1,12 +1,12 @@
 ﻿# 第2次隨堂-隨堂-QZ2
 >
->學號：1234567 
+>學號：109111139
 ><br />
->姓名：王小明 
+>姓名：繆昊廷 
 ><br />
->作業撰寫時間：180 (mins，包含程式撰寫時間)
+>作業撰寫時間：20mins
 ><br />
->最後撰寫文件日期：2022/10/12
+>最後撰寫文件日期：2022/10/23
 >
 
 本份文件包含以下主題：(至少需下面兩項，若是有多者可以自行新增)
@@ -15,21 +15,22 @@
 
 ## 說明程式與內容
 
-開始寫說明，該說明需說明想法，
-並於之後再對上述想法的每一部分將程式進一步進行展現，
-若需引用程式區則使用下面方法，
-若為.cs檔內程式除了於敘述中需註明檔案名稱外，
-還需使用語法` ```csharp 程式碼 ``` `，
-下段程式碼則為使用後結果：
+下段程式碼則為使用後結果：初始lb_Msg的Text顯示為Page_Load，當按鈕按下時，lb_Msg的Text顯示為btn_Event。
 
 ```csharp
-public void mt_getResult(){
-    ...
-}
+protected void Page_Load(object sender, EventArgs e)
+        {
+            lb_Msg.Text = "Page_Load";
+        }
+
+        protected void btn_Submit_Click(object sender, EventArgs e)
+        {
+            lb_Msg.Text = "btn_Event";
+        }
 ```
 
-若要於內文中標示部分.aspx檔，則使用以下標籤` ```html 程式碼 ``` `，
-下段程式碼則為使用後結果：
+
+下段程式碼則為使用後結果：顯示id為lb_Msg的label和id為btn_Submit的按鈕，按鈕的文字為送出，高度和寬度為40px。
 
 ```html
 <%@ Page Language="C#" AutoEventWireup="true" ...>
@@ -44,6 +45,8 @@ public void mt_getResult(){
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="lb_Msg" runat="server"></asp:Label>
+            <asp:Button ID="btn_Submit" runat="server" Text="送出" Width="40px" Height="40px" OnClick="btn_Submit_Click" />
         </div>
     </form>
 </body>
@@ -53,6 +56,5 @@ public void mt_getResult(){
 
 ## 個人認為完成作業須具備觀念
 
-開始寫說明，需要說明本次作業個人覺得需學會那些觀念 (需寫成文章，需最少50字，
-並且文內不得有你、我、他三種文字)
+可以在右下角的屬性更改id或Text，程式執行時，會先執行Page_Load這段的程式，當按鈕按下時，會執行該按鈕按下的指令。
 
